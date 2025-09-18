@@ -1,0 +1,231 @@
+:root {
+  --bg: #f0fdfa;             /* soft mint background */
+  --card: #ffffff;           /* white cards */
+  --muted: #475569;          /* neutral slate gray */
+  --accent: #0d9488;         /* teal (medical + professional) */
+  --accent-2: #10b981;       /* emerald green (growth + MBA) */
+  --radius: 14px;
+  --max-width: 1100px;
+  --gutter: 28px;
+  --transition: 300ms ease-in-out;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; font-family: "Inter", "Segoe UI", Roboto, sans-serif; }
+
+body {
+  background: var(--bg);
+  color: #1e293b;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+/* Container Layout */
+.container {
+  max-width: var(--max-width);
+  margin: 40px auto;
+  display: grid;
+  gap: var(--gutter);
+  grid-template-columns: 300px 1fr;
+  padding: 0 20px;
+}
+
+/* Sidebar Profile Card */
+.profile-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  text-align: center;
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+}
+
+.avatar img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--accent-2);
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: 22px;
+  margin-bottom: 6px;
+  color: var(--accent);
+}
+
+p.role {
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.pill {
+  background: #ecfdf5;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  color: var(--accent);
+}
+
+.contact {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.contact a {
+  display: block;
+  padding: 10px;
+  background: #f8fafc;
+  color: #1e293b;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background var(--transition), color var(--transition);
+}
+
+.contact a:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.download {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  transition: opacity var(--transition);
+}
+
+.download:hover {
+  opacity: 0.9;
+}
+
+/* Main Content */
+main {
+  background: var(--card);
+  padding: 28px;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+section {
+  margin-bottom: 32px;
+}
+
+section h3 {
+  font-size: 20px;
+  color: var(--accent);
+  margin-bottom: 16px;
+  border-left: 4px solid var(--accent-2);
+  padding-left: 10px;
+}
+
+/* Timeline (Experience) */
+.timeline {
+  border-left: 2px solid #e5e7eb;
+  padding-left: 18px;
+}
+.item {
+  margin-bottom: 20px;
+  position: relative;
+}
+.item::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 8px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.job {
+  font-weight: 700;
+}
+.sub {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+/* Skills */
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 14px;
+}
+.skill {
+  background: #f9fafb;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+}
+.bar {
+  height: 10px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 8px 0;
+}
+.bar > i {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+}
+
+/* Projects */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+  gap: 16px;
+}
+.card {
+  background: #f9fafb;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  transition: transform var(--transition);
+}
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  .profile-card {
+    position: relative;
+    top: 0;
+  }
+  main {
+    margin-top: 20px;
+  }
+}
