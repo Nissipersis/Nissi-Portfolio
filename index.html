@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MANGALAPUDI NISSI PERSIS — BSc Cardiopulmonary Perfusion Technology</title>
-  <meta name="description" content="Portfolio of Mangalapudi Nissi Persis — BSc Cardiopulmonary Perfusion Technology graduate with hospital experience, Perfusionist, Tele Associate, and MBA candidate. Clinical skills, projects, contact and downloadable resume."/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mangalapudi Nissi Persis — Portfolio</title>
+  <meta name="description" content="Portfolio of Mangalapudi Nissi Persis — BSc Cardiopulmonary Perfusion Technology graduate with hospital experience, Perfusionist, Tele Associate, and MBA candidate."/>
   
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -47,10 +47,6 @@
     .card-hover:hover {
       transform: translateY(-5px);
       box-shadow: 0 12px 25px -5px rgba(0, 0, 0, 0.1);
-    }
-    
-    .skill-bar {
-      transition: width 1s ease-in-out;
     }
     
     .timeline-item::before {
@@ -141,7 +137,7 @@
           </div>
           
           <a href="#" class="w-full inline-flex items-center justify-center bg-gradient-to-r from-teal-600 to-emerald-500 hover:from-teal-700 hover:to-emerald-600 text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg">
-
+            <i class="fas fa-download mr-2"></i> Download Resume
           </a>
         </div>
       </aside>
@@ -395,25 +391,9 @@
       }
     }
 
-    document.getElementById('year').textContent = new Date().getFullYear();
-    
-    // Animate skill bars on scroll
+    // Set the current year in the footer
     document.addEventListener('DOMContentLoaded', function() {
-      const skillBars = document.querySelectorAll('.skill-bar');
-      
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const width = entry.target.getAttribute('data-width');
-            entry.target.style.width = width;
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-      
-      skillBars.forEach(bar => {
-        observer.observe(bar);
-      });
+      document.getElementById('year').textContent = new Date().getFullYear();
     });
   </script>
 </body>
